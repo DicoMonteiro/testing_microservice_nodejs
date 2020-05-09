@@ -1,0 +1,756 @@
+{
+  "stats": {
+    "suites": 15,
+    "tests": 14,
+    "passes": 14,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-05-09T19:22:05.868Z",
+    "end": "2020-05-09T19:22:06.807Z",
+    "duration": 939,
+    "testsRegistered": 14,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "86368cfd-739f-4357-a89a-b0da6ec1f922",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d93b95cd-0a1a-4e03-8b74-a48efd1b9f8f",
+          "title": "delete",
+          "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/delete.spec.js",
+          "file": "/test/delete.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "d84980e3-6fa0-4c80-93e2-710c1b2d849c",
+              "title": "quando apago uma tarefa",
+              "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/delete.spec.js",
+              "file": "/test/delete.spec.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook",
+                  "fullTitle": "delete quando apago uma tarefa \"before all\" hook",
+                  "timedOut": false,
+                  "duration": 108,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(200);\n    done();\n});",
+                  "err": {},
+                  "uuid": "334faa96-a9d8-44d8-968c-99be32de973f",
+                  "parentUUID": "d84980e3-6fa0-4c80-93e2-710c1b2d849c",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [
+                {
+                  "title": "\"after all\" hook",
+                  "fullTitle": "delete quando apago uma tarefa \"after all\" hook",
+                  "timedOut": false,
+                  "duration": 25,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.get('/task/' + task._id).end(function (err, res) {\n    expect(res).to.have.status(404);\n    done();\n});",
+                  "err": {},
+                  "uuid": "de986ccb-e397-4e8b-bb36-3ba58ae814e3",
+                  "parentUUID": "d84980e3-6fa0-4c80-93e2-710c1b2d849c",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "tests": [
+                {
+                  "title": "entao deve retornar 200",
+                  "fullTitle": "delete quando apago uma tarefa entao deve retornar 200",
+                  "timedOut": false,
+                  "duration": 19,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.delete('/task/' + task._id).end(function (err, res) {\n    expect(res).to.have.status(200);\n    expect(res.body).to.eql({});\n    done();\n});",
+                  "err": {},
+                  "uuid": "9009d3df-46c0-4d2b-909d-8890c059a5a5",
+                  "parentUUID": "d84980e3-6fa0-4c80-93e2-710c1b2d849c",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "9009d3df-46c0-4d2b-909d-8890c059a5a5"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 19,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "c3951425-0e62-450f-8703-9b517135a14e",
+              "title": "quando apago uma tarefa 2",
+              "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/delete.spec.js",
+              "file": "/test/delete.spec.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook",
+                  "fullTitle": "delete quando apago uma tarefa 2 \"before all\" hook",
+                  "timedOut": false,
+                  "duration": 39,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_task2.default.insertMany([task], function (error, docs) {\n    request.delete('/task/' + task._id).end(function (err, res) {\n        expect(res).to.have.status(200);\n        expect(res.body).to.eql({});\n        done();\n    });\n});",
+                  "err": {},
+                  "uuid": "bd9dee48-7501-4b1e-9c2a-50be33d97c57",
+                  "parentUUID": "c3951425-0e62-450f-8703-9b517135a14e",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "então o retorno deve ser 404",
+                  "fullTitle": "delete quando apago uma tarefa 2 então o retorno deve ser 404",
+                  "timedOut": false,
+                  "duration": 6,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.get('/task/' + task._id).end(function (err, res) {\n    expect(res).to.have.status(404);\n    done();\n});",
+                  "err": {},
+                  "uuid": "63ff7538-f583-4ced-8769-faf2e2ec0e8b",
+                  "parentUUID": "c3951425-0e62-450f-8703-9b517135a14e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "63ff7538-f583-4ced-8769-faf2e2ec0e8b"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 6,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "1e49bf17-2c48-483c-bac7-5576101f318e",
+              "title": "quando a tarefa nao existe",
+              "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/delete.spec.js",
+              "file": "/test/delete.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "deve retornar 200",
+                  "fullTitle": "delete quando a tarefa nao existe deve retornar 200",
+                  "timedOut": false,
+                  "duration": 32,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var id = require('mongoose').Types.ObjectId();\nrequest.delete('/task/' + id).end(function (err, res) {\n    expect(res).to.have.status(404);\n    expect(res.body).to.eql({});\n    done();\n});",
+                  "err": {},
+                  "uuid": "d39b7fa9-c05e-4298-a509-052a321b4512",
+                  "parentUUID": "1e49bf17-2c48-483c-bac7-5576101f318e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "d39b7fa9-c05e-4298-a509-052a321b4512"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 32,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "d8961523-14ae-423d-ac61-b905c25a9097",
+          "title": "get",
+          "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/get.spec.js",
+          "file": "/test/get.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "b5fa4f6d-9706-4cb9-9cbd-24e3a43e760f",
+              "title": "quando eu tenho tarefas cadastradas",
+              "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/get.spec.js",
+              "file": "/test/get.spec.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook",
+                  "fullTitle": "get quando eu tenho tarefas cadastradas \"before all\" hook",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var tasks = [{ title: \"Estudar NodeJs\", owner: \"adrianobma@gmail.com\", done: false }, { title: \"Fazer compras\", owner: \"adrianobma@gmail.com\", done: false }, { title: \"Estudar MongoDB\", owner: \"adrianobma@gmail.com\", done: false }];\n            _task2.default.insertMany(tasks);\n            done();",
+                  "err": {},
+                  "uuid": "4365a211-bebd-4829-8d4b-83cfc784d48d",
+                  "parentUUID": "b5fa4f6d-9706-4cb9-9cbd-24e3a43e760f",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "deve retornar uma lista",
+                  "fullTitle": "get quando eu tenho tarefas cadastradas deve retornar uma lista",
+                  "timedOut": false,
+                  "duration": 35,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.get('/task').end(function (err, res) {\n                expect(res).to.has.status(200);\n                expect(res.body.data).to.be.an('array');\n                done();\n            });",
+                  "err": {},
+                  "uuid": "a6086c0b-761e-4ff3-99f4-eef66a3ff836",
+                  "parentUUID": "b5fa4f6d-9706-4cb9-9cbd-24e3a43e760f",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "deve filtrar por palavra chave",
+                  "fullTitle": "get quando eu tenho tarefas cadastradas deve filtrar por palavra chave",
+                  "timedOut": false,
+                  "duration": 12,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.get('/task').query({ title: 'Estudar' }).end(function (err, res) {\n                expect(res).to.has.status(200);\n                expect(res.body.data[0].title).to.equal('Estudar NodeJs');\n                expect(res.body.data[1].title).to.equal('Estudar MongoDB');\n                done();\n            });",
+                  "err": {},
+                  "uuid": "78fbee2f-a141-481b-9d1e-f1b5a8db6f6a",
+                  "parentUUID": "b5fa4f6d-9706-4cb9-9cbd-24e3a43e760f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a6086c0b-761e-4ff3-99f4-eef66a3ff836",
+                "78fbee2f-a141-481b-9d1e-f1b5a8db6f6a"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 47,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "d43099ee-80dc-4b82-af86-0f651803671b",
+              "title": "quando busco por id",
+              "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/get.spec.js",
+              "file": "/test/get.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "deve retornar uma única tarefa",
+                  "fullTitle": "get quando busco por id deve retornar uma única tarefa",
+                  "timedOut": false,
+                  "duration": 20,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var tasks = [{ title: \"Ler um livro de Javascript\", owner: \"adrianobma@gmail.com\", done: false }];\n            _task2.default.insertMany(tasks, function (err, result) {\n                var id = result[0]._id;\n                request.get('/task/' + id).end(function (err, res) {\n                    expect(res).to.has.status(200);\n                    expect(res.body.data.title).to.equal(tasks[0].title);\n                    done();\n                });\n            });",
+                  "err": {},
+                  "uuid": "c55c637d-1ff2-41a2-8a36-a9eb5a00e852",
+                  "parentUUID": "d43099ee-80dc-4b82-af86-0f651803671b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "c55c637d-1ff2-41a2-8a36-a9eb5a00e852"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 20,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "df6ecba0-d70c-454f-9581-da8997c1a7b7",
+              "title": "quando a tarefa não existe",
+              "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/get.spec.js",
+              "file": "/test/get.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "deve retornar 404",
+                  "fullTitle": "get quando a tarefa não existe deve retornar 404",
+                  "timedOut": false,
+                  "duration": 70,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var id = require('mongoose').Types.ObjectId();\nrequest.get('/task/' + id).end(function (err, res) {\n    expect(res).to.has.status(404);\n    expect(res.body).to.eql({});\n    done();\n});",
+                  "err": {},
+                  "uuid": "f98bb889-9c89-4ffb-bdb7-ab7526d513bb",
+                  "parentUUID": "df6ecba0-d70c-454f-9581-da8997c1a7b7",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "f98bb889-9c89-4ffb-bdb7-ab7526d513bb"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 70,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "a93a7995-3ee5-4fbc-9c71-a9554460fde5",
+          "title": "post",
+          "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/post.spec.js",
+          "file": "/test/post.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "2db72a45-0918-4ec5-a140-897ab0ef6198",
+              "title": "quando eu cadastro uma tarefa",
+              "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/post.spec.js",
+              "file": "/test/post.spec.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook",
+                  "fullTitle": "post quando eu cadastro uma tarefa \"before all\" hook",
+                  "timedOut": false,
+                  "duration": 49,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// Limpando a fila RabbitMQ antes de enviar a task\nrabbitmq.delete('/api/queues/%2F/tasksdev/contents').auth('guest', 'guest').end(function (err, res) {\n    expect(res).to.has.status(204);\n    done();\n});",
+                  "err": {},
+                  "uuid": "2c738be1-cc3d-42ba-be3e-716eaffc4c8c",
+                  "parentUUID": "2db72a45-0918-4ec5-a140-897ab0ef6198",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "entao deve retornar 200",
+                  "fullTitle": "post quando eu cadastro uma tarefa entao deve retornar 200",
+                  "timedOut": false,
+                  "duration": 9,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(200);\n    expect(res.body.data.title).to.be.an('string');\n    expect(res.body.data.owner).to.be.an('string');\n    expect(res.body.data.done).to.be.an('boolean');\n    expect(res.body.data.title).to.equal('Estudar Mongoose');\n    done();\n});",
+                  "err": {},
+                  "uuid": "72feb077-e0c7-40a2-b023-bb3da64a9baf",
+                  "parentUUID": "2db72a45-0918-4ec5-a140-897ab0ef6198",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "e deve enviar um email",
+                  "fullTitle": "post quando eu cadastro uma tarefa e deve enviar um email",
+                  "timedOut": false,
+                  "duration": 70,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var payload = { vhost: \"/\", name: \"tasksdev\", truncate: \"50000\", ackmode: \"ack_requeue_true\", encoding: \"auto\", count: \"1\"\n                // Acessando a fila para verificar se a mensagem a ser enviada por email, consumida pelo Consumer está correta ou não, sem precisar validar acessando o email.\n            };rabbitmq.post('/api/queues/%2F/tasksdev/get').auth('guest', 'guest').send(payload).end(function (err, res) {\n                expect(res).to.has.status(200);\n                // console.log(res.body[0])\n                expect(res.body[0].payload).to.include('Tarefa ' + task.title + ' criada com sucesso!');\n                done();\n            });",
+                  "err": {},
+                  "uuid": "a716ecf9-54c4-46ce-9c45-55b0332140c4",
+                  "parentUUID": "2db72a45-0918-4ec5-a140-897ab0ef6198",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "72feb077-e0c7-40a2-b023-bb3da64a9baf",
+                "a716ecf9-54c4-46ce-9c45-55b0332140c4"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 79,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "ee19e8d0-503f-48f4-99d7-d1352d43e92f",
+              "title": "quando nao informo o titulo",
+              "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/post.spec.js",
+              "file": "/test/post.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "entao deve retornar 400",
+                  "fullTitle": "post quando nao informo o titulo entao deve retornar 400",
+                  "timedOut": false,
+                  "duration": 5,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(400);\n    expect(res.body.errors.title.message).to.equal('Oops! Title is required.');\n    done();\n});",
+                  "err": {},
+                  "uuid": "8f160c43-afb0-4e78-8e88-377269ec1884",
+                  "parentUUID": "ee19e8d0-503f-48f4-99d7-d1352d43e92f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "8f160c43-afb0-4e78-8e88-377269ec1884"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 5,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "b4a4fb24-96bb-469e-a8b3-0390b08ac77b",
+              "title": "quando nao informo o dono",
+              "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/post.spec.js",
+              "file": "/test/post.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "entao deve retornar 400",
+                  "fullTitle": "post quando nao informo o dono entao deve retornar 400",
+                  "timedOut": false,
+                  "duration": 5,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(400);\n    expect(res.body.errors.owner.message).to.equal('Oops! Owner is required.');\n    done();\n});",
+                  "err": {},
+                  "uuid": "a4920f13-c6eb-4498-a902-6ac05944cdcf",
+                  "parentUUID": "b4a4fb24-96bb-469e-a8b3-0390b08ac77b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a4920f13-c6eb-4498-a902-6ac05944cdcf"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 5,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "7ff1c770-84eb-4648-94c1-abcb6795b892",
+              "title": "quando a tarefa já existe",
+              "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/post.spec.js",
+              "file": "/test/post.spec.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook",
+                  "fullTitle": "post quando a tarefa já existe \"before all\" hook",
+                  "timedOut": false,
+                  "duration": 51,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(200);\n    done();\n});",
+                  "err": {},
+                  "uuid": "e5988d77-2117-4b03-9c2e-1e8209c429ea",
+                  "parentUUID": "7ff1c770-84eb-4648-94c1-abcb6795b892",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "entao deve retornar 409",
+                  "fullTitle": "post quando a tarefa já existe entao deve retornar 409",
+                  "timedOut": false,
+                  "duration": 9,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(409);\n    // console.log(res.body)\n    expect(res.body.errmsg).to.contains('duplicate key');\n    expect(res.body.errmsg).to.include('duplicate key');\n    done();\n});",
+                  "err": {},
+                  "uuid": "b344a0b0-1493-49e3-a6eb-c17413b7dac2",
+                  "parentUUID": "7ff1c770-84eb-4648-94c1-abcb6795b892",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b344a0b0-1493-49e3-a6eb-c17413b7dac2"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 9,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "1b14f734-c6bc-4330-8984-e8813e2a10da",
+          "title": "put",
+          "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/put.spec.js",
+          "file": "/test/put.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "6f439e3f-37f7-4542-8545-a5236cb186f9",
+              "title": "quando eu altero uma tarefa",
+              "fullFile": "/Users/adrianoalmeida/Documents/QANinja_Cursos/curso_test_micro_service_node/treko-master/api/test/put.spec.js",
+              "file": "/test/put.spec.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook",
+                  "fullTitle": "put quando eu altero uma tarefa \"before all\" hook",
+                  "timedOut": false,
+                  "duration": 10,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(200);\n    done();\n});",
+                  "err": {},
+                  "uuid": "6bd9a4a3-8bb8-448a-9826-ce99c425504f",
+                  "parentUUID": "6f439e3f-37f7-4542-8545-a5236cb186f9",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "entao deve retornar 200",
+                  "fullTitle": "put quando eu altero uma tarefa entao deve retornar 200",
+                  "timedOut": false,
+                  "duration": 22,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "task.title = 'Comprar baconzitos', task.done = true;\nrequest.put('/task/' + task._id).send(task).end(function (err, res) {\n    expect(res).to.has.status(200);\n    // console.log(res.body)\n    expect(res.body).to.eql({});\n    done();\n});",
+                  "err": {},
+                  "uuid": "42192d2e-0d1d-4763-a43c-14c97dd40e21",
+                  "parentUUID": "6f439e3f-37f7-4542-8545-a5236cb186f9",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "e deve retornar os dados atualizados",
+                  "fullTitle": "put quando eu altero uma tarefa e deve retornar os dados atualizados",
+                  "timedOut": false,
+                  "duration": 11,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.get('/task/' + task._id).end(function (err, res) {\n    expect(res).to.has.status(200);\n    expect(res.body.data.title).to.equal(task.title);\n    expect(res.body.data.done).to.be.true;\n    done();\n});",
+                  "err": {},
+                  "uuid": "d902fb99-d2d7-4424-af08-73f247c602b1",
+                  "parentUUID": "6f439e3f-37f7-4542-8545-a5236cb186f9",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "42192d2e-0d1d-4763-a43c-14c97dd40e21",
+                "d902fb99-d2d7-4424-af08-73f247c602b1"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 33,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.1.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.1.0"
+    }
+  }
+}

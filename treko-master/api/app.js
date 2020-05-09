@@ -27,7 +27,7 @@ app.delete('/task/:id', crud.remove)
 app.post('/task', crud.create)
 app.put('/task/:id', crud.update)
 
-app.listen(3000, () => {
+app.listen(4000, () => {
     console.log("Treko API está no AR!");
 });
 
