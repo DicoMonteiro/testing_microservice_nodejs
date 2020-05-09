@@ -1,0 +1,68 @@
+#### Alterando os hosts no sistema Unix para melhor utilização
+
+sudo vim /etc/hosts
+
+
+- Adicionar:
+
+127.0.0.1       pgdb
+127.0.0.1       pgadmin
+127.0.0.1       pixel-api
+127.0.0.1       pixel-web
+127.0.0.1       zombie-api
+127.0.0.1       zombie-web
+127.0.0.1       jenkins
+127.0.0.1       rabbitmq
+
+
+- Depois passar o comando:
+
+:wq!
+
+
+- Depois verificar a alteração:
+
+cat /etc/hosts
+
+
+### Acessando a aplicação
+
+
+jenkins:<numero_da_porta>
+
+rabbitmq:<numero_da_porta>
+
+
+
+### Usando o RabbitMQ
+
+usuarioPadrao: guest
+senhaPadrao: guest
+
+
+
+
+## Para realizar a limpeza do MongoDB ou qualquer que seja a ação no MongoDB
+
+Deve ser instalado o MongoDB Community Edition (Shell), de acordo com seu SO, 
+sem precisar inciar o seu serviço.
+
+
+### Arquivos Scripts para realizar a limpeza ou exclusão da base de dados
+
+dropdb.bat (para windows)
+
+dropdb.sh (para mac ou linux)
+
+
+## Ajustes no Mac e linux
+
+Para dar permissão na execução do .sh, deve entrar na pasta do arquivo e executar:
+
+chmod +x dropdb.sh
+
+
+## Para executar o .sh
+
+./dropdb.sh
+
